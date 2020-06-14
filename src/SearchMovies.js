@@ -17,6 +17,7 @@ export default function SearchMovies() {
     } catch (err) {
       console.error(err)
     }
+    setQuery('')
   }
 
   return (
