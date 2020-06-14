@@ -54,16 +54,6 @@ small {
 .button:hover {
   background-color: rgba(0, 0, 0, 0.85);
 }
-@media (min-width: 786px) {
-  .form {
-    grid-template-columns: auto 1fr auto;
-    gap: 1rem;
-    align-items: center;
-  }
-  .input {
-    margin-bottom: 0;
-  }
-}
 .card-list {
   margin-top: 4rem;
 }
@@ -82,4 +72,20 @@ small {
   margin: 0 auto;
   display: block;
   width: 100%;
+}
+@media (min-width: 786px) {
+  .form {
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+  }
+  .input {
+    margin-bottom: 0;
+  }
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    overflow-x: hidden;
+  }
 }
