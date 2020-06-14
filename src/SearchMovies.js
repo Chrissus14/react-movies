@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Card from './components/Card'
 
 export default function SearchMovies() {
 
@@ -33,13 +34,7 @@ export default function SearchMovies() {
       </form>
       <div className="card-list">
         {movies.filter(movie => movie.Poster !== "N/A").map(movie => (
-          <div className="card" key={movie.imdbID}>
-            <img className="card__image" src={movie.Poster} alt={movie.Title} />
-            <div className="card__content">
-              <h3 className="card__title">{movie.Title}</h3>
-              <p><small>AÑO DEL ESTRENO: {movie.Year}</small></p>
-            </div>
-          </div>
+          <Card movie={movie} key={movie.imdbID} />
         ))}
       </div>
     </>
