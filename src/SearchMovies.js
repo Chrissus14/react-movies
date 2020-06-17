@@ -7,12 +7,12 @@ export default function SearchMovies() {
   const [movies, setMovies] = useState([])
 
   const searchMovies = async (e) => {
+    const accessKey = process.env.REACT_APP_ACCESSKEY
     e.preventDefault()
-    const url = `http://www.omdbapi.com/?i=tt3896198&apikey=c707e5a2&s=${query}`
+    const url = `http://www.omdbapi.com/?i=tt3896198&apikey=${accessKey}&s=${query}`
     try {
       const res = await fetch(url)
       const data = await res.json()
-      console.log(data.Search)
       setMovies([...data.Search])
     } catch (err) {
       console.error(err)
